@@ -50,19 +50,27 @@ body {
 .colunas {
     display: flex;
     justify-content: center;
-    max-width: 1200px; 
+    flex-wrap: nowrap; 
+    overflow-x: auto; 
+    max-width: 100%;
     margin: 0 auto;
 }
 
 .colunas .andar {
-    flex: 0 0 auto; 
+    flex: 0 0 auto;
     background-color: #a0005c;
     height: 100px;
-    margin: 20px;
+    margin: 10px;
     border-radius: 10px;
-    
+    min-width: 200px;
 }
 
+@media only screen and (max-width: 768px) {
+    .colunas .andar {
+        flex-basis: auto; 
+        min-width: unset;
+    }
+}
 .colunas .andar:hover {
     background-color: #c4006f;
 }
